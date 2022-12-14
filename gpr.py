@@ -8,16 +8,12 @@ import matplotlib.figure as figure
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn.datasets import load_boston
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import WhiteKernel, RBF, ConstantKernel, Matern, DotProduct
 from sklearn.model_selection import train_test_split, GridSearchCV
 
-number_of_test_samples = 200
-fold_number = 5
-
 class GPRegressor:
-    def __init__(self, X, y, testsize, fold_number):
+    def __init__(self, X, y, testsize=200, fold_number=5):
         self.X = X
         self.y = y
         self.testsize = testsize
