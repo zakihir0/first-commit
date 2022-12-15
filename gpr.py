@@ -42,7 +42,7 @@ class GPRegressor:
         ConstantKernel() * Matern(nu=2.5) + WhiteKernel(),
         ConstantKernel() * Matern(nu=2.5) + WhiteKernel() + ConstantKernel() * DotProduct()]
         
-        cv_model = GridSearchCV(GaussianProcessRegressor(alpha=0), {'kernel': kernels}, cv=fold_number)
+        cv_model = GridSearchCV(GaussianProcessRegressor(alpha=0), {'kernel': kernels}, cv=self.fold_number)
         cv_model.fit(X_train, y_train)
         optimal_kernel = cv_model.best_params_['kernel']
         model = GaussianProcessRegressor(optimal_kernel, alpha=0)
@@ -118,6 +118,6 @@ class GPRegressor:
         X_train, X_test, y_train, y_test = self.validation()
         
         plt.scatter(predicted_y_test_std, abs(y_test - predicted_y_test), c='blue')
-        plt.xlabel('Std. of estimated Y')
+        plt.xlabel('Std. of estimated Y')   
         plt.ylabel('Error of Y')
         plt.show()
