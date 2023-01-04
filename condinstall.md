@@ -7,3 +7,4 @@ conda install -c anaconda openpyxl -y
 conda install -c rdkit rdkit -y
 conda install -c conda-forge streamlit -y
 conda install -c conda-forge matplotlib -y
+conda install -c conda-forge mordred
