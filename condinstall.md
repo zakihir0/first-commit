@@ -14,7 +14,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvi
 conda install -c conda-forge imbalanced-learn -y
 conda install -c conda-forge boruta_py -y
 conda install -c bioconda pubchempy -y
-conda install -c mordred-descriptor mordred -y
+conda install -c conda-forge mordred -y
 conda install -c conda-forge pathlib -y
 conda install -c conda-forge xlsxwriter -y
 pip install dcekit
